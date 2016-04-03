@@ -1,0 +1,14 @@
+name: 'chat'
+version: 0.0.1
+description: An absolute bare-bones web app.
+
+environment:
+  sdk: '>=1.0.0 <2.0.0'
+
+dependencies:
+  browser: '>=0.10.0 <0.11.0'
+  dart_to_js_script_rewriter: '^1.0.1'
+  js: '^0.6.0'
+
+transformers:
+- dart_to_js_script_rewriter

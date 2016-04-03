@@ -1,0 +1,14 @@
+body {
+    margin-bottom: 30px;
+}
+
+#message {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    height: 30px;
+    border: 0;
+    background: #CCC;
+    margin: 0;
+    padding: 0;
+}

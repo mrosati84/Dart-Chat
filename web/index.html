@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+
+<!--
+    Copyright (c) 2016, Matteo Rosati. All rights reserved. Use of this source code
+    is governed by a BSD-style license that can be found in the LICENSE file.
+-->
+
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Real time chat</title>
+    <!-- Vendor styles -->
+    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/notify/0.4.2/styles/metro/notify-metro.min.css">
+
+    <!-- Application styles -->
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+<h1>Realtime Dart chat</h1>
+
+<div id="messages"></div>
+
+<input type="text" id="message" name="message">
+
+<!-- Nick modal -->
+<div class="modal fade" id="nick-modal" tabindex="-1" role="dialog" aria-labelledby="nick-modal-label">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title" id="nick-modal-label">Choose a nickname</h4>
+            </div>
+            <div class="modal-body">
+                <form id="nick-form">
+                    <div class="form-group">
+                        <label for="nick">Nickname</label>
+                        <input type="text" class="form-control" id="nick" name="nick">
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button id="nick-btn" type="submit" class="btn btn-primary">Confirm</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Vendor JS libraries -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.2/jquery.min.js"></script>
+<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/notify/0.4.2/notify.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/notify/0.4.2/styles/metro/notify-metro.min.js"></script>
+
+<!-- Dart stuff -->
+<script defer src="main.dart" type="application/dart"></script>
+<script defer src="packages/browser/dart.js"></script>
+</body>
+</html>
