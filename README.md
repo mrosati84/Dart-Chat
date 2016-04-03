@@ -39,7 +39,10 @@ $ dart bin/chat_server.dart
 FINE: 2016-04-04 00:02:29.211357: Server bind to ws://0.0.0.0:4040
 ```
 
-Default ports for web and server are respectively `8080` and `4040`
+You can now visit [http://localhost:8080](http://localhost:8080) using [Dartium](https://www.dartlang.org/tools/dartium/) (faster, won't need Javascript
+compilation) or either Chrome (will be slower, Dart code will be compiled on the fly in Javascript).
+
+Default ports for web and server are respectively `8080` and `4040`.
 
 ## TODO
 
