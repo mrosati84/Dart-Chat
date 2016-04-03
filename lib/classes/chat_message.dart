@@ -5,8 +5,7 @@ import 'dart:convert';
 
 ///
 /// Represents a single message on the chat.
-/// It contains two constructors, one plain, one
-/// to be used with a JSON input.
+/// It contains two constructors, one plain, one to be used with a JSON input.
 ///
 class ChatMessage {
   String _nick;
@@ -32,6 +31,7 @@ class ChatMessage {
   ///
   @override
   String toString() {
+    // JSON generation is of course sanitized
     HtmlEscape sanitizer = const HtmlEscape();
     return '{"nick": "${sanitizer.convert(this.nick)}", "message": "${sanitizer.convert(this.message)}"}';
   }

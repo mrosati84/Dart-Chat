@@ -9,8 +9,7 @@ import 'package:chat/classes/chat_client.dart';
 
 ///
 /// This is the server main function.
-/// The server is used only to dispatch
-/// chat messages across all the clients
+/// The server is used only to dispatch chat messages across all the clients
 /// connected.
 ///
 main() {
@@ -26,21 +25,18 @@ main() {
         // Upgrade a HttpRequest to a WebSocket connection.
         var socket = await WebSocketTransformer.upgrade(req);
 
-        // Client has connected, we add it to
-        // the list of connected clients
+        // Client has connected, we add it to the list of connected clients
         log.fine("Client connected");
         ChatClient client = new ChatClient(socket)..addToClientsList();
 
         // Incoming socket message.
         socket.listen((message) {
-          // This is how we broadcast messages
-          // to all connected clients
+          // This is how we broadcast messages to all connected clients
           chatClientList.forEach((client) {
             client.socket.add(message);
           });
         }, onDone: () {
-          // Client disconnected (i.e. closed the
-          // browser, refreshed the page)
+          // Client disconnected (i.e. closed the browser, refreshed the page)
           log.fine("Client disconnected");
           client.removeFromClientsList();
         }, onError: () {

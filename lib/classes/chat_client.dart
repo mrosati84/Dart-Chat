@@ -8,8 +8,7 @@ import 'package:chat/logger.dart';
 List<ChatClient> chatClientList = new List<ChatClient>();
 
 ///
-/// This class represents a [ChatClient]
-/// client using the chat.
+/// This class represents a [ChatClient] client using the chat.
 ///
 class ChatClient {
   WebSocket _socket; // keep track of all the connected sockets
@@ -19,7 +18,7 @@ class ChatClient {
   }
 
   ///
-  /// getter for the [_socket] attribute
+  /// Getter for the [_socket] attribute
   ///
   WebSocket get socket => this._socket;
 
