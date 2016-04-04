@@ -1,3 +1,5 @@
+@TestOn("vm")
+
 import 'package:test/test.dart';
 
 /// The class to be tested

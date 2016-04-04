@@ -1,3 +1,5 @@
+@TestOn("vm")
+
 import 'package:test/test.dart';
 import 'package:mockito/mockito.dart';
 import 'dart:io';
