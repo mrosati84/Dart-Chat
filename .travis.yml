@@ -1,3 +1,4 @@
 language: dart
+with_content_shell: true
 dart:
   - "stable"
