@@ -13,3 +13,5 @@ dependencies:
 
 transformers:
 - dart_to_js_script_rewriter
+- test/pub_serve:
+    $include: test/**_test.dart
