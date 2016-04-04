@@ -12,14 +12,13 @@ final InputElement nickInput = querySelector('#nick');
 final FormElement nickForm = querySelector('#nick-form');
 final ButtonElement nickBtn = querySelector('#nick-btn');
 
-String nick = 'Anonymous user';
-
 ///
 /// Used to set the nickname in the chat.
 /// [e] is the form submit DOM event.
 /// Nickname can be a default one if the user does not provide one to use.
 ///
-String handleNickFormSubmit(e) {
+String handleNickFormSubmit(Event e, JsObject context, InputElement nickInput) {
+  String nick = 'Anonymous user';
   e.preventDefault();
 
   if (nickInput.value.trim().isNotEmpty) {
@@ -35,6 +34,8 @@ String handleNickFormSubmit(e) {
 }
 
 void main() {
+  String nick;
+
   // Open the modal window
   context.callMethod('jQuery', ['#nick-modal'])
       .callMethod('modal', []);
@@ -51,7 +52,7 @@ void main() {
 
   // Handle submission of nickname form
   nickForm.onSubmit.listen((e) {
-    nick = handleNickFormSubmit(e);
+    nick = handleNickFormSubmit(e, context, nickInput);
   });
 
   // Handle chat message sending
