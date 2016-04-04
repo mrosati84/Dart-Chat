@@ -1,6 +1,6 @@
 # Dart Chat
 
-![Travis build status](https://travis-ci.org/mrosati84/Dart-Chat.svg?branch=master)
+[![Build Status](https://travis-ci.org/mrosati84/Dart-Chat.svg?branch=master)](https://travis-ci.org/mrosati84/Dart-Chat)
 
 This project demonstrates how to use Google Dartlang on both client and server to build a realtime websocket chat
 application.
