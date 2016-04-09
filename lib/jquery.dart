@@ -3,7 +3,6 @@
 
 import 'dart:js' as js;
 
-///
 /// This is a handy way to call jQuery from Dart. This makes possible to call
 /// jQuery methods simply calling:
 /// jQuery.callMethod('methodName', ['parameterName']);
@@ -13,5 +12,4 @@ import 'dart:js' as js;
 /// context
 ///    .callMethod('jQuery', ['#nick-modal'])
 ///    .callMethod('modal', ['hide']);
-///
 var jQuery = js.context['jQuery'];

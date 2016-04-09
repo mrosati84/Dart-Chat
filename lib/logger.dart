@@ -6,9 +6,7 @@ import 'constants.dart';
 
 final Logger log = new Logger(LOGGER_NAME);
 
-///
 /// Set up the [Logger]
-///
 void setupLogger() {
   Logger.root.level = Level.ALL;
   Logger.root.onRecord.listen((LogRecord rec) {

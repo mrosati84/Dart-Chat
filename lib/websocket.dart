@@ -10,18 +10,14 @@ import 'dart:async';
 WebSocket websocket;
 final DivElement messages = querySelector('#messages');
 
-///
 /// This function sets up the websocket connection and assigns all the related
 /// events handlers. [retrySeconds] parameter determines how many seconds to
 /// wait before retry a new connection after an error.
-///
 void initWebsocket([int retrySeconds = WEBSOCKET_RETRY_TIMEOUT]) {
   websocket = new WebSocket(WEBSOCKET_URI);
   var reconnectScheduled = false;
 
-  ///
   /// Schedules a reconnection to the websocket.
-  ///
   void scheduleReconnect() {
     if (!reconnectScheduled) {
       new Timer(new Duration(milliseconds: 1000 * retrySeconds),

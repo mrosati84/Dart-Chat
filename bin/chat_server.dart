@@ -7,11 +7,9 @@ import 'package:chat/constants.dart';
 import 'package:chat/logger.dart';
 import 'package:chat/classes/chat_client.dart';
 
-///
 /// This is the server main function.
 /// The server is used only to dispatch chat messages across all the clients
 /// connected.
-///
 main() {
   setupLogger();
 

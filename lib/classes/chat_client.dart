@@ -7,9 +7,7 @@ import 'package:chat/logger.dart';
 // Keep track of all the registered clients in a list
 List<ChatClient> chatClientList = new List<ChatClient>();
 
-///
 /// This class represents a [ChatClient] client using the chat.
-///
 class ChatClient {
   WebSocket _socket; // keep track of all the connected sockets
 
@@ -17,9 +15,7 @@ class ChatClient {
     this._socket = socket;
   }
 
-  ///
   /// Getter for the [_socket] attribute
-  ///
   WebSocket get socket => this._socket;
 
   void addToClientsList() {

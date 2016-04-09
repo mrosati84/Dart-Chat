@@ -3,19 +3,15 @@
 
 import 'dart:convert';
 
-///
 /// Represents a single message on the chat.
 /// It contains two constructors, one plain, one to be used with a JSON input.
-///
 class ChatMessage {
   String _nick;
   String _message;
 
   ChatMessage(this._nick, this._message);
 
-  ///
   /// Uses [jsonMessage] to build the chat message
-  ///
   ChatMessage.fromJSON(String jsonMessage) {
     Map decodedMessage = JSON.decode(jsonMessage);
 
@@ -26,9 +22,7 @@ class ChatMessage {
   String get nick => this._nick;
   String get message => this._message;
 
-  ///
   /// Shorthand to convert a chat message to JSON.
-  ///
   @override
   String toString() {
     // JSON generation is of course sanitized

@@ -12,11 +12,9 @@ final InputElement nickInput = querySelector('#nick');
 final FormElement nickForm = querySelector('#nick-form');
 final ButtonElement nickBtn = querySelector('#nick-btn');
 
-///
 /// Used to set the nickname in the chat.
 /// [e] is the form submit DOM event.
 /// Nickname can be a default one if the user does not provide one to use.
-///
 String handleNickFormSubmit(Event e, JsObject context, InputElement nickInput) {
   String nick = 'Anonymous user';
   e.preventDefault();
@@ -26,9 +24,7 @@ String handleNickFormSubmit(Event e, JsObject context, InputElement nickInput) {
   }
 
   // Hide the modal, we have a nickname
-  context
-      .callMethod('jQuery', ['#nick-modal'])
-      .callMethod('modal', ['hide']);
+  context.callMethod('jQuery', ['#nick-modal']).callMethod('modal', ['hide']);
 
   return nick;
 }
@@ -37,18 +33,19 @@ void main() {
   String nick;
 
   // Open the modal window
-  context.callMethod('jQuery', ['#nick-modal'])
-      .callMethod('modal', []);
+  context.callMethod('jQuery', ['#nick-modal']).callMethod('modal', []);
 
   // Bind the modal close event. We want to init the websocket only once the
   // modal is closed (and user has a nickname).
   // Resulting JS is this:
   // jQuery('#nick-modal').on('hidden.bs.modal', <<initWebsocket>>);
   // NOTE: initWebsocket is though not exported to JS context.
-  context.callMethod('jQuery', ['#nick-modal'])
-      .callMethod('on', ['hidden.bs.modal', (JsObject obj) {
-        initWebsocket();
-      }]);
+  context.callMethod('jQuery', ['#nick-modal']).callMethod('on', [
+    'hidden.bs.modal',
+    (JsObject obj) {
+      initWebsocket();
+    }
+  ]);
 
   // Handle submission of nickname form
   nickForm.onSubmit.listen((e) {
