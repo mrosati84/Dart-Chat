@@ -1,4 +1,4 @@
-@TestOn("firefox")
+@TestOn("phantomjs")
 
 import 'package:test/test.dart';
 import 'package:mockito/mockito.dart';
